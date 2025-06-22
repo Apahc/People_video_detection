@@ -187,6 +187,10 @@ class PeopleDetector:
         return frame, people_in_frame
 
 def main():
+    if not os.path.exists('yolov8m.pt'):
+        print("Скачивание модели yolov8m.pt...")
+        YOLO('yolov8m.pt')  # Автоматически скачает при первом запуске
+
     """Точка входа в программу."""
     parser = argparse.ArgumentParser(description='Детекция и трекинг людей в видео с использованием YOLOv8.')
     parser.add_argument('--input', default='crowd.mp4', help='Путь к входному видеофайлу (по умолчанию: crowd.mp4).')
