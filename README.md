@@ -44,19 +44,27 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 python people_detection_frame_by_frame.py --input crowd.mp4 --output output.mp4
 ```
 Параметры запуска
+
 Аргумент	Описание	По умолчанию
+
 --input	Путь к входному видео	crowd.mp4
+
 --output	Путь для выходного видео	output.mp4
+
 --model	Модель YOLOv8 (n, s, m, l, x)	yolov8m.pt
+
 --conf	Порог уверенности (0.0-1.0)	0.5
+
 --iou	Порог IoU для NMS (0.0-1.0)	0.5
+
 Примеры
 ```bash
 # С пользовательскими параметрами
 python people_detection_frame_by_frame.py --input video.mp4 --output result.mp4 --model yolov8l.pt --conf 0.6
-```
+
 # Только CPU
 CUDA_VISIBLE_DEVICES="" python people_detection_frame_by_frame.py
+```
 ## 📊 Выходные данные
 Программа создает:
 
